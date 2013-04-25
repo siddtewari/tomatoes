@@ -1,0 +1,12 @@
+<div> <%= link_to "Create New Deck", "/decks/new" %> </div>
+
+<hr />
+<em>Existing Decks</em>
+
+<% @decks.each do |deck| %>
+	<div> 
+		<%= link_to deck.name, "/decks/#{deck.id}" %> 
+	 	<%= link_to "Edit", "/decks/#{deck.id}/edit" %> 
+	  <%= link_to "Delete", "/decks/#{deck.id}", method: :delete, confirm: "Are you sure?" %> 
+	</div>
+<% end %>
