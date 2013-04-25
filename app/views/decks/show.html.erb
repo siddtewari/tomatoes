@@ -1,1 +1,13 @@
-<%= @deck.name %>
+<%= link_to "All Decks", decks_path %>
+<hr />
+<div>
+	<%= @deck.name %>
+</div>
+
+<hr />
+
+<% @cards.each do |card| %>
+	<div>
+		<%= link_to card.front, [@deck, card] %>
+	</div>
+<% end %>
