@@ -1,6 +1,10 @@
 class DecksController < ApplicationController
+	
+	before_filter :authenticate
+	
 	def index
-		@decks = Deck.all
+		@decks = current_user.decks
+		# @decks = Deck.all
 	end
 
 	def show
