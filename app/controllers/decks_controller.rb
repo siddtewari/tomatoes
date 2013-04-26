@@ -25,7 +25,7 @@ class DecksController < ApplicationController
 	def update
 		@deck = Deck.find(params[:id])
 		@deck.update_attributes(params[:deck])
-		# redirect_to deck_path(@deck.id)
+		# redirect_to deck_path(@deck.id) - polymorphic path
 		redirect_to @deck
 	end
 
